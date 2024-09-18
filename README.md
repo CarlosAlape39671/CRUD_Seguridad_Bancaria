@@ -15,3 +15,7 @@ creación del validador→ node ace make:validator nombre
 creación del security → node ace make:middleware Security
 
 npm install axios → para instalar la libreria de axios en la relación entre los microservicios
+
+Link Guia Adonis:
+- https://docs.google.com/document/d/1UReHfPF3rE9Y8FCHPS3v9IkIMk4XUmF3/edit
+- https://docs.google.com/document/d/1JcyBkzb_3xjC9CodMiDlwI3zAo618Pra/edit
