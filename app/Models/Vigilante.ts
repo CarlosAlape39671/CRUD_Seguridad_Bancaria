@@ -7,9 +7,14 @@ export default class Vigilante extends BaseModel {
   public id_vigilante: number
 
   @column()
-  public añosExperiencia: number
+  public anosExperiencia: number
+  
+  @column()
+  public codigoPersona: string
 
-  @belongsTo(() => Persona)
+  @belongsTo(() => Persona, {
+    foreignKey: 'codigoPersona'
+  })
   public persona: BelongsTo<typeof Persona>
 
   @column.dateTime({ autoCreate: true })

@@ -19,14 +19,14 @@ export default class JuezsController {
   }
 
   public async create({ request }: HttpContextContract) {
-    const body = request.only(['persona_id', 'claveInternaJuzgado', 'añosServicio']);
+    const body = request.only(['codigoPersona', 'claveInternaJuzgado', 'anosServicio']);
     const juez = await Juez.create(body);
     return juez;
   }
 
   public async update({ params, request }: HttpContextContract) {
     const juez = await Juez.findOrFail(params.id);
-    const body = request.only(['claveInternaJuzgado', 'añosServicio']);
+    const body = request.only(['claveInternaJuzgado', 'anosServicio']);
     juez.merge(body);
     return juez.save();
   }

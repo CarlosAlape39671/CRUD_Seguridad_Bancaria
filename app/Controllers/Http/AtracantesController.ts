@@ -20,7 +20,7 @@ export default class AtracantesController {
   }
 
   public async create({ request }: HttpContextContract) {
-    const body = request.only(['persona_id', 'antecedente']);
+    const body = request.only(['codigoPersona', 'antecedente']);
     const atracante = await Atracante.create(body);
     return atracante;
   }

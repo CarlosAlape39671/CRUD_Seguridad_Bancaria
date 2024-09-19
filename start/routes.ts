@@ -7,10 +7,10 @@ Route.put('/personas/:id', 'PersonasController.update')
 Route.delete('/personas/:id', 'PersonasController.delete')
 
 // Rutas para Juez
-Route.get('/jueces/:id?', 'JuecesController.find')
-Route.post('/jueces', 'JuecesController.create')
-Route.put('/jueces/:id', 'JuecesController.update')
-Route.delete('/jueces/:id', 'JuecesController.delete')
+Route.get('/jueces/:id?', 'JuezsController.find')
+Route.post('/jueces', 'JuezsController.create')
+Route.put('/jueces/:id', 'JuezsController.update')
+Route.delete('/jueces/:id', 'JuezsController.delete')
 
 // Rutas para Atracante
 Route.get('/atracantes/:id?', 'AtracantesController.find')
