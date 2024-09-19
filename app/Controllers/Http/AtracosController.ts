@@ -8,6 +8,7 @@ export default class AtracosController {
             let theAtraco: Atraco = await Atraco.findOrFail(params.id);
             await theAtraco.load("casos")
             await theAtraco.load("atracantes")
+            await theAtraco.load("sucursal")
             // await theAtraco.load("casos", screeningQuery=>{
             //     screeningQuery.preload("theater", theaterQuery=>{
             //         theaterQuery.preload("projector")
@@ -48,10 +49,11 @@ export default class AtracosController {
         // response.status(204);
         // return await theAtraco.delete();
         await theAtraco.load("casos")
-        if (theAtraco.casos) {
+        await theAtraco.load("atracantes")
+        if (theAtraco.casos.length > 0) {
             response.status(400);
             return { "message": "No se puede eliminar porque tiene casos asociados"}
-        } else if (theAtraco.atracantes) {
+        } else if (theAtraco.atracantes.length > 0) {
             response.status(400);
             return { "message": "No se puede eliminar porque tiene atracantes asociados"}
         } else {

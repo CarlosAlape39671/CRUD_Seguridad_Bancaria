@@ -5,13 +5,16 @@ import Entidadbancaria from './Entidadbancaria'
 import Atraco from './Atraco'
 
 export default class Sucursal extends BaseModel {
-  @column({ isPrimary: true })
+
+  public static table = 'sucursales'
+
+  @column({ isPrimary: true, columnName: 'codigoSucursal' })
   public codigoSucursal: number
 
   @column()
   public domicilio: string
 
-  @column()
+  @column({ columnName: 'numeroEmpleados' })
   public numeroEmpleados: number
 
   @column.dateTime({ autoCreate: true })

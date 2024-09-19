@@ -10,7 +10,7 @@ export default class Caso extends BaseModel {
   @column()
   public condenado: boolean
 
-  @column()
+  @column({ columnName: 'tiempoCarcel' })
   public tiempoCarcel: number
 
   @column()
