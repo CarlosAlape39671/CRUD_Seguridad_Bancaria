@@ -30,3 +30,7 @@ import './routes/atracantes'
 import './routes/juezs'
 import './routes/personas'
 import './routes/vigilantes'
+import './routes/entidadBancarias'
+import './routes/sucursales'
+import './routes/contrataciones'
+
