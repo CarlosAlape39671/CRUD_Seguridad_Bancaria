@@ -41,7 +41,7 @@ export default class CasosController {
         const body = request.body();
         theCaso.condenado = body.condenado;
         theCaso.tiempoCarcel = body.tiempoCarcel;
-        theCaso.juez_id = body.juez_id;
+        theCaso.id_juez = body.id_juez;
         theCaso.atraco_id = body.atraco_id;
         return await theCaso.save();
     }

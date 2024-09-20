@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
       table.boolean('condenado')
       table.integer('tiempoCarcel')
-      table.integer('juez_id')
+      table.integer('id_juez')
         .unsigned()
         .references('id_juez').inTable('juezs')
       table.integer('atraco_id')

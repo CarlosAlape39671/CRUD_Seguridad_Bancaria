@@ -22,7 +22,7 @@ export default class Juez extends BaseModel {
   public persona: BelongsTo<typeof Persona>
 
   @hasMany(() => Caso, {
-    foreignKey: 'juez_id'
+    foreignKey: 'id_juez'
   })
   public casos: HasMany<typeof Caso>
 

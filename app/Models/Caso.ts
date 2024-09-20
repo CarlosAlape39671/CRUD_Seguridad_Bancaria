@@ -14,7 +14,7 @@ export default class Caso extends BaseModel {
   public tiempoCarcel: number
 
   @column()
-  public juez_id: number
+  public id_juez: number
 
   @column()
   public atraco_id: number
@@ -26,7 +26,7 @@ export default class Caso extends BaseModel {
   public updatedAt: DateTime
 
   @belongsTo(() => Juez, {
-    foreignKey: 'juez_id'
+    foreignKey: 'id_juez'
   })
   public juez: BelongsTo<typeof Juez>
 
