@@ -40,7 +40,7 @@ export default class AtracosController {
         const theAtraco: Atraco = await Atraco.findOrFail(params.id);
         const body = request.body();
         theAtraco.fecha_atraco = body.fecha_atraco;
-        theAtraco.sucursal_id = body.sucursal_id;
+        theAtraco.codigo_sucursal = body.codigo_sucursal;
         return await theAtraco.save();
     }
 

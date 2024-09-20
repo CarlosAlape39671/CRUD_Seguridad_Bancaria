@@ -12,7 +12,7 @@ export default class Atraco extends BaseModel {
   public fecha_atraco: string
 
   @column()
-  public sucursal_id: number
+  public codigo_sucursal: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -21,7 +21,7 @@ export default class Atraco extends BaseModel {
   public updatedAt: DateTime
 
   @belongsTo(() => Sucursal, {
-    foreignKey: 'sucursal_id'
+    foreignKey: 'codigo_sucursal'
   })
   public sucursal: BelongsTo<typeof Sucursal>
   

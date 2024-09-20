@@ -6,10 +6,10 @@ export default class Banda extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @column({ columnName: 'numero_banda' })
+  @column()
   public numero_banda: number
 
-  @column({ columnName: 'numero_miembros' })
+  @column()
   public numero_miembros: number
 
   @column.dateTime({ autoCreate: true })

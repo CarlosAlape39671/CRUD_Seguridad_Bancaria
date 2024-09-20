@@ -13,6 +13,12 @@ export default class Atracante extends BaseModel {
   
   @column()
   public codigo_persona: string
+  
+  @column()
+  public atraco_id: number
+  
+  @column()
+  public banda_id: number
 
   @belongsTo(() => Persona, {
     foreignKey: 'codigo_persona'
