@@ -21,7 +21,7 @@ export default class PersonasController {
 
   // Crear una nueva persona
   public async create({ request }: HttpContextContract) {
-    const body = request.only(['codigo_persona', 'edad', 'nombreCompleto']);
+    const body = request.only(['codigo_persona', 'edad', 'nombre_completo']);
     const persona = await Persona.create(body);
     return persona;
   }
@@ -29,7 +29,7 @@ export default class PersonasController {
   // Actualizar una persona existente
   public async update({ params, request }: HttpContextContract) {
     const persona = await Persona.findOrFail(params.id);
-    const body = request.only(['codigo_persona', 'edad', 'nombreCompleto']);
+    const body = request.only(['codigo_persona', 'edad', 'nombre_completo']);
     persona.merge(body);
     return persona.save();
   }

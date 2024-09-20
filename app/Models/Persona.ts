@@ -15,7 +15,7 @@ export default class Persona extends BaseModel {
   public edad: number
 
   @column()
-  public nombreCompleto: string
+  public nombre_completo: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
