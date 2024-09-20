@@ -40,7 +40,7 @@ export default class CasosController {
         const theCaso: Caso = await Caso.findOrFail(params.id);
         const body = request.body();
         theCaso.condenado = body.condenado;
-        theCaso.tiempoCarcel = body.tiempoCarcel;
+        theCaso.tiempo_carcel = body.tiempo_carcel;
         theCaso.id_juez = body.id_juez;
         theCaso.atraco_id = body.atraco_id;
         return await theCaso.save();
