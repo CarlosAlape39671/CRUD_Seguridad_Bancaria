@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import Caso from './Caso'
 import Atracante from './Atracante'
+import Sucursal from './Sucursal'
 
 export default class Atraco extends BaseModel {
   @column({ isPrimary: true })
@@ -19,10 +20,10 @@ export default class Atraco extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  // @belongsTo(() => Sucursal, {
-  //   foreignKey: 'sucursal_id'
-  // })
-  // public sucursal: BelongsTo<typeof Sucursal>
+  @belongsTo(() => Sucursal, {
+    foreignKey: 'sucursal_id'
+  })
+  public sucursal: BelongsTo<typeof Sucursal>
   
   @hasMany(() => Caso, {
     foreignKey: 'atraco_id'

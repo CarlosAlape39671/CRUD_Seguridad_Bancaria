@@ -49,7 +49,7 @@ export default class BandasController {
         // return await theBanda.delete();
 
         await theBanda.load("atracantes")
-        if (theBanda.atracantes) {
+        if (theBanda.atracantes.length > 0) {
             response.status(400);
             return { "message": "No se puede eliminar porque tiene atracantes asociados"}
         } else {
