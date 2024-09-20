@@ -20,14 +20,14 @@ export default class VigilantesController {
   }
 
   public async create({ request }: HttpContextContract) {
-    const body = request.only(['codigo_persona', 'anosExperiencia']);
+    const body = request.only(['codigo_persona', 'anos_experiencia']);
     const vigilante = await Vigilante.create(body);
     return vigilante;
   }
 
   public async update({ params, request }: HttpContextContract) {
     const vigilante = await Vigilante.findOrFail(params.id);
-    const body = request.only(['anosExperiencia']);
+    const body = request.only(['anos_experiencia']);
     vigilante.merge(body);
     return vigilante.save();
   }

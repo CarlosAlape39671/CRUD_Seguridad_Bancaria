@@ -8,7 +8,7 @@ export default class Vigilante extends BaseModel {
   public id_vigilante: number
 
   @column()
-  public anosExperiencia: number
+  public anos_experiencia: number
   
   @column()
   public codigo_persona: string
