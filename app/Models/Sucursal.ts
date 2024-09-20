@@ -5,6 +5,8 @@ import Entidadbancaria from './Entidadbancaria'
 import Atraco from './Atraco'
 
 export default class Sucursal extends BaseModel {
+  public static table = 'sucursales'
+
   @column({ isPrimary: true })
   public codigo_sucursal: number
 

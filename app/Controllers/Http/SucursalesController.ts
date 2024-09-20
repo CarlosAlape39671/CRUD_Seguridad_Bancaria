@@ -19,19 +19,19 @@ export default class SucursalesController {
     
 
     public async create({ request }: HttpContextContract) {
-        const body = request.only(['domicilio', 'numeroEmpleados']);
+        const body = request.only(['domicilio', 'numero_empleados', 'codigo_entidad']);
         const sucursal = await Sucursal.create(body);
         return sucursal;
     }
 
     public async update({ params, request }: HttpContextContract) {
         const sucursal = await Sucursal.findOrFail(params.codigoSucursal);
-        const body = request.only(['domicilio', 'numeroEmpleados']);
+        const body = request.only(['domicilio', 'numero_empleados', 'codigo_entidad']);
         sucursal.merge(body);
         return sucursal.save();
     }
     
-
+ss
     public async delete({ params, response }: HttpContextContract) {
         const codigoSucursal = params.codigoSucursal;
     
