@@ -8,16 +8,16 @@ export default class Contratacion extends BaseModel {
   public id: number
 
   @column()
-  public conArma: boolean
+  public con_arma: boolean
   
   @column()
   public id_vigilante: number
 
   @column()
-  public codigoSucursal: number
+  public codigo_sucursal: number
 
   @column({ isPrimary: true })
-  public fechaContratacion: Date
+  public fecha_contratacion: Date
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -31,7 +31,7 @@ export default class Contratacion extends BaseModel {
   public vigilante: BelongsTo<typeof Vigilante>
 
   @belongsTo(() => Sucursal, {
-    foreignKey: 'codigoSucursal'
+    foreignKey: 'codigo_sucursal'
   })
   public sucursal: BelongsTo<typeof Sucursal>
 }

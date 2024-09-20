@@ -7,8 +7,8 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.boolean('condenado')
-      table.integer('tiempoCarcel')
-      table.integer('juez_id')
+      table.integer('tiempo_carcel')
+      table.integer('id_juez')
         .unsigned()
         .references('id_juez').inTable('juezs')
       table.integer('atraco_id')

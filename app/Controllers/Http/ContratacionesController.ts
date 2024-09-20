@@ -18,14 +18,14 @@ export default class ContratacionesController {
   }
 
   public async create({ request }: HttpContextContract) {
-    const body = request.only(['conArma', 'fechaContratacion']);
+    const body = request.only(['con_arma', 'fecha_contratacion', 'codigo_sucursal', 'id_vigilante']);
     const contratacion = await Contratacion.create(body);
     return contratacion;
   }
 
   public async update({ params, request }: HttpContextContract) {
     const contratacion = await Contratacion.findOrFail(params.id);
-    const body = request.only(['conArma', 'fechaContratacion']);
+    const body = request.only(['con_arma', 'fecha_contratacion', 'codigo_sucursal', 'id_vigilante']);
     contratacion.merge(body);
     return contratacion.save();
   }

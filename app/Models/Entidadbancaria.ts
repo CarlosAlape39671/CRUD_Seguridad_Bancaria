@@ -6,7 +6,7 @@ export default class Entidadbancaria extends BaseModel {
   public static table = 'entidad_bancarias'
   
   @column({ isPrimary: true })
-  public codigoEntidad: number
+  public codigo_entidad: number
 
   @column()
   public domicilio: string
@@ -18,7 +18,7 @@ export default class Entidadbancaria extends BaseModel {
   public updatedAt: DateTime
 
   @hasMany(() => Sucursal, {
-    foreignKey: 'codigoEntidad'
+    foreignKey: 'codigo_entidad'
   })
   public sucursales: HasMany<typeof Sucursal>
 }

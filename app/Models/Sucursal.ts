@@ -6,13 +6,16 @@ import Atraco from './Atraco'
 
 export default class Sucursal extends BaseModel {
   @column({ isPrimary: true })
-  public codigoSucursal: number
+  public codigo_sucursal: number
 
   @column()
   public domicilio: string
 
   @column()
-  public numeroEmpleados: number
+  public numero_empleados: number
+
+  @column()
+  public codigo_entidad: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -21,17 +24,17 @@ export default class Sucursal extends BaseModel {
   public updatedAt: DateTime
 
   @hasMany(() => Contratacion, {
-    foreignKey: 'codigoSucursal'
+    foreignKey: 'codigo_sucursal'
   })
   public contrataciones: HasMany<typeof Contratacion>
 
   @belongsTo(() => Entidadbancaria, {
-    foreignKey: 'codigoEntidad'
+    foreignKey: 'codigo_entidad'
   })
   public sucursal: BelongsTo<typeof Entidadbancaria>
 
   @hasMany(() => Atraco, {
-    foreignKey: 'codigoSucursal'
+    foreignKey: 'codigo_sucursal'
   })
   public atracos: HasMany<typeof Atraco>
 }

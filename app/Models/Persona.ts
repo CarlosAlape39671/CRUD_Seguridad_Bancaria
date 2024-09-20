@@ -9,7 +9,7 @@ export default class Persona extends BaseModel {
   public id_persona: number
 
   @column()
-  public codigoPersona: string
+  public codigo_persona: string
 
   @column()
   public edad: number
@@ -23,12 +23,12 @@ export default class Persona extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @hasMany(() => Vigilante, { foreignKey: 'codigoPersona' })
+  @hasMany(() => Vigilante, { foreignKey: 'codigo_persona' })
   public subscriptions: HasMany<typeof Vigilante>;
 
-  @hasMany(() => Atracante, { foreignKey: 'codigoPersona' })
+  @hasMany(() => Atracante, { foreignKey: 'codigo_persona' })
   public owners: HasMany<typeof Atracante>;
 
-  @hasMany(() => Juez, { foreignKey: 'codigoPersona' })
+  @hasMany(() => Juez, { foreignKey: 'codigo_persona' })
   public beneficiaries: HasMany<typeof Juez>;
 }

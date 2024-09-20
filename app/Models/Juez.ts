@@ -7,16 +7,16 @@ export default class Juez extends BaseModel {
   public id_juez: number
 
   @column()
-  public claveInternaJuzgado: string
+  public clave_interna_juzgado: string
 
   @column()
-  public anosServicio: number
+  public anos_servicio: number
 
   @column()
-  public codigoPersona: string
+  public codigo_persona: string
 
   @belongsTo(() => Persona, {
-    foreignKey: 'codigoPersona'
+    foreignKey: 'codigo_persona'
   })
   public persona: BelongsTo<typeof Persona>
   @column.dateTime({ autoCreate: true })

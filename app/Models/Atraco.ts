@@ -8,7 +8,7 @@ export default class Atraco extends BaseModel {
   public id: number
 
   @column()
-  public fechaAtraco: string
+  public fecha_atraco: string
 
   @column()
   public sucursal_id: number

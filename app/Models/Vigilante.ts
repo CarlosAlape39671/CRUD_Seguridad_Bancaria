@@ -11,7 +11,7 @@ export default class Vigilante extends BaseModel {
   public anosExperiencia: number
   
   @column()
-  public codigoPersona: string
+  public codigo_persona: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -20,7 +20,7 @@ export default class Vigilante extends BaseModel {
   public updatedAt: DateTime
 
   @belongsTo(() => Persona, {
-    foreignKey: 'codigoPersona'
+    foreignKey: 'codigo_persona'
   })
   public persona: BelongsTo<typeof Persona>
 

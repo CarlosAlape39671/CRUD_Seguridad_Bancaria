@@ -10,10 +10,10 @@ export default class Atracante extends BaseModel {
   public antecedente: string
   
   @column()
-  public codigoPersona: string
+  public codigo_persona: string
 
   @belongsTo(() => Persona, {
-    foreignKey: 'codigoPersona'
+    foreignKey: 'codigo_persona'
   })
   public persona: BelongsTo<typeof Persona>
   @column.dateTime({ autoCreate: true })

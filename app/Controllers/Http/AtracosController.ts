@@ -38,7 +38,7 @@ export default class AtracosController {
     public async update({ params, request }: HttpContextContract) {
         const theAtraco: Atraco = await Atraco.findOrFail(params.id);
         const body = request.body();
-        theAtraco.fechaAtraco = body.fechaAtraco;
+        theAtraco.fecha_atraco = body.fecha_atraco;
         theAtraco.sucursal_id = body.sucursal_id;
         return await theAtraco.save();
     }
