@@ -38,8 +38,8 @@ export default class BandasController {
     public async update({ params, request }: HttpContextContract) {
         const theBanda: Banda = await Banda.findOrFail(params.id);
         const body = request.body();
-        theBanda.numeroBanda = body.numeroBanda;
-        theBanda.numeroMiembros = body.numeroMiembros;
+        theBanda.numero_banda = body.numero_banda;
+        theBanda.numero_miembros = body.numero_miembros;
         return await theBanda.save();
     }
 
