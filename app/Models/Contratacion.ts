@@ -4,6 +4,8 @@ import Vigilante from './Vigilante'
 import Sucursal from './Sucursal'
 
 export default class Contratacion extends BaseModel {
+  public static table = 'contrataciones'
+
   @column({ isPrimary: true })
   public id: number
 
@@ -16,8 +18,8 @@ export default class Contratacion extends BaseModel {
   @column()
   public codigo_sucursal: number
 
-  @column({ isPrimary: true })
-  public fecha_contratacion: Date
+  @column()
+  public fecha_contratacion: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
